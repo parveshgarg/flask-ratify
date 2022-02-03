@@ -2,12 +2,12 @@
 """
     core
     ~~~~
-    flask-validate is a simple extension to Flask allowing you to validate requests
+    flask-ratify is a simple extension to Flask allowing you to ratify (validate) requests
     using jsonschema
 
     jsonschema is supported for headers, params, and body (json only)
 
-    For schema details used in flask-validate, see docs/schema.md
+    For schema details used in flask-ratify, see docs/schema.md
     For jsonschema details, check https://pypi.org/project/jsonschema/ and https://json-schema.org/understanding-json-schema/
 
     :copyright: (c) 2022 by Parvesh Garg.
@@ -24,7 +24,7 @@ LOG = logging.getLogger(__name__)
 RegexObject = type(re.compile(''))
 
 
-def validate_request(request, schema):
+def ratify_request(request, schema):
     method = request.method
     if method not in schema:
         LOG.info(
@@ -84,4 +84,3 @@ def try_match(request_origin, maybe_regex):
             return request_origin.lower() == maybe_regex.lower()
         except AttributeError:
             return request_origin == maybe_regex
-
