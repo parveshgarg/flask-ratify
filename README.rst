@@ -1,11 +1,11 @@
 flask-ratify
-==========
+============
 
 |Latest Version| |Supported Python versions| |License|
 
 A Flask extension for ratifying (validating) requests
 
-This package uses the `jsonschema https://pypi.org/project/jsonschema/`__ for validating the requests. A package
+This package uses the `jsonschema <https://pypi.org/project/jsonschema/>`__ for validating the requests. A package
 specific schema has been implemented on top of jsonschema to validate headers, args, and json\_body.
 
 Installation
@@ -26,7 +26,7 @@ regexes as well. The package also contains a decorator, for those who prefer thi
 flask-ratify returns status 400
 
 Simple Usage
--------------
+~~~~~~~~~~~~
 
 .. code:: python
 
@@ -74,7 +74,7 @@ Simple Usage
 
 
 Schema
--------------
+~~~~~~
 
 flask-ratify schema follows a simple model of it's own on top of json-schema. For better understanding of json-schema, read
 
@@ -83,6 +83,7 @@ flask-ratify schema follows a simple model of it's own on top of json-schema. Fo
 
 
 .. code:: python
+
     {
         "endpoint": {
             "http method": {
@@ -130,7 +131,7 @@ If things aren't working as you expect, enable logging to help understand what i
 
 
 TODO
--------------
+----
 
 -   Test cases
 -   Schema validation for debugging
@@ -145,6 +146,7 @@ Questions, comments or improvements?
 Please create an issue on `Github <https://github.com/parveshgarg/flask-ratify>`__
 
 For code contributions, please create an issue and raise a pull request.
+
 
 Credits
 -------
