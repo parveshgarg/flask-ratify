@@ -17,15 +17,9 @@
 from setuptools import setup
 from os.path import join, dirname
 
-with open(join(dirname(__file__), 'flask_ratify/version.py'), 'r') as f:
-    exec(f.read())
-
-with open (join(dirname(__file__), 'requirements.txt'), 'r') as f:
-    install_requires = f.read().split("\n")
-
 setup(
     name='flask-ratify',
-    version=__version__,
+    version='0.1.2',
     url='https://github.com/parveshgarg/flask-ratify',
     license='Apache License 2.0',
     author='Parvesh Garg',
@@ -36,7 +30,10 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    install_requires=install_requires,
+    install_requires=[
+        'Flask>=0.9',
+        'jsonschema>=4.4.0'
+    ],
     tests_require=[
         'nose',
         'packaging'
