@@ -17,6 +17,7 @@
 from jsonschema import Draft7Validator
 import logging
 import re
+from flask import Request
 
 
 LOG = logging.getLogger(__name__)
@@ -24,11 +25,11 @@ LOG = logging.getLogger(__name__)
 RegexObject = type(re.compile(''))
 
 
-def ratify_request(request, schema):
+def ratify_request(request: Request, schema):
     method = request.method
     if method not in schema:
         LOG.info(
-            "schema for method {} in route {} is not specified".format(method, request.uri)
+            "schema for method {} in route {} is not specified".format(method, request.path)
         )
         return True, "Not Implemented"
 

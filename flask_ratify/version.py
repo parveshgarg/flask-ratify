@@ -14,4 +14,4 @@
     :license: Apache Software License 2.0, see LICENSE for more details.
 """
 
-__version__ = '0.1.2'
+__version__ = '0.1.3'
